@@ -1,5 +1,5 @@
 osx_defaults "TimeMachine should NOT ask to use every new disk"   do
-  domain 'com.apple.TimeMachine'
+  domain "/Users/#{node['sprout']['user']}/Library/Preferences/com.apple.TimeMachine"
   key 'DoNotOfferNewDisksForBackup'
   boolean true
 end

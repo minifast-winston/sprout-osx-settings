@@ -1,17 +1,17 @@
 osx_defaults "ask for password when screen is locked" do
-  domain 'com.apple.screensaver'
+  domain "/Users/#{node['sprout']['user']}/Library/Preferences/com.apple.screensaver"
   key 'askForPassword'
   integer 1
 end
 
 osx_defaults "wait 60 seconds between screensaver & lock" do
-  domain 'com.apple.screensaver'
+  domain "/Users/#{node['sprout']['user']}/Library/Preferences/com.apple.screensaver"
   key 'askForPasswordDelay'
   float 60
 end
 
 plist_dir = "#{node['sprout']['home']}/Library/Preferences/ByHost"
-domains = Dir["#{plist_dir}/com.apple.screensaver.*.plist"].map do |f| 
+domains = Dir["#{plist_dir}/com.apple.screensaver.*.plist"].map do |f|
   domain = File.basename(f).chomp('.plist')
   "ByHost/#{domain}"
 end

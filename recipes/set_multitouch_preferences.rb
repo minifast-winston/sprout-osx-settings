@@ -1,11 +1,11 @@
 osx_defaults "allow clicking by touch" do
-  domain 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+  domain "/Users/#{node['sprout']['user']}/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad"
   key 'Clicking'
   integer 1
 end
 
 osx_defaults "allow dragging by touch" do
-  domain 'com.apple.driver.AppleBluetoothMultitouch.trackpad'
+  domain "/Users/#{node['sprout']['user']}/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad"
   key 'Dragging'
   integer 1
 end
